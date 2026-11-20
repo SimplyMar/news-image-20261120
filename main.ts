@@ -9,3 +9,4 @@ const out = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 mkdirSync(out, { recursive: true });
 copyFileSync(src, join(out, 'entry.png'));
 process.stdout.write(`wrote ${join(out, 'entry.png')} (${statSync(src).size} bytes)\n`);
+process.exit(0);
