@@ -2,60 +2,70 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>The World in One Day — Friday, 20 November 2026</title>
+<title>The World on Friday, 20 November 2026</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body {
     width: 1024px;
     height: 1024px;
     overflow: hidden;
-    background: #F6F1E7;
-    color: #151922;
+    background: #F4EFE3;
+    color: #141821;
     font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
   .page {
     width: 1024px;
     height: 1024px;
-    padding: 16px 20px 14px;
+    padding: 15px 18px 13px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 9px;
     background:
-      radial-gradient(circle at 12% 8%, rgba(217, 119, 6, 0.06), transparent 36%),
-      radial-gradient(circle at 88% 12%, rgba(185, 28, 28, 0.06), transparent 34%),
-      linear-gradient(180deg, #FAF6EE 0%, #F4EFE4 100%);
+      radial-gradient(circle at 14% 6%, rgba(180, 35, 24, 0.06), transparent 34%),
+      radial-gradient(circle at 86% 10%, rgba(14, 116, 144, 0.06), transparent 32%),
+      linear-gradient(180deg, #FAF6EC 0%, #F1EBD9 100%);
   }
 
   /* MASTHEAD */
   .masthead {
-    border-top: 4px solid #151922;
-    border-bottom: 2px solid #151922;
-    padding: 6px 0 7px;
+    border-top: 5px solid #141821;
+    border-bottom: 2px solid #141821;
+    padding: 5px 0 6px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     gap: 12px;
+    position: relative;
+  }
+  .masthead::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 1px;
+    background: #141821;
   }
   .mast-left {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 1px;
   }
   .kicker-top {
-    font-size: 10.5px;
-    font-weight: 800;
-    letter-spacing: 0.14em;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #9A2B1F;
+    color: #9E241B;
   }
   .mast-title {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 26.5px;
+    font-size: 29px;
     font-weight: 900;
-    line-height: 1.05;
-    letter-spacing: -0.02em;
-    color: #11151E;
+    line-height: 1.0;
+    letter-spacing: -0.025em;
+    color: #0F131C;
     white-space: nowrap;
   }
   .mast-right {
@@ -63,44 +73,46 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 4px;
+    gap: 3px;
     flex-shrink: 0;
   }
   .date-badge {
-    background: #151922;
-    color: #FAF6EE;
-    font-size: 13.5px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    padding: 4px 11px;
+    background: #9E241B;
+    color: #FFFDF8;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 0.09em;
+    padding: 4px 12px;
     border-radius: 2px;
     text-transform: uppercase;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.2);
   }
   .edition-meta {
-    font-size: 9.5px;
-    font-weight: 700;
+    font-size: 9.4px;
+    font-weight: 800;
     letter-spacing: 0.05em;
-    color: #4A5160;
+    color: #3E4554;
     text-transform: uppercase;
     white-space: nowrap;
   }
 
   /* LEAD 4 ILLUSTRATED CARDS */
   .leads {
+    margin-top: 2px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 9px;
   }
   .lead-card {
-    background: #FFFDF8;
-    border: 1px solid #D5CCB9;
-    border-top: 3.5px solid #151922;
+    background: #FFFDF7;
+    border: 1px solid #CFC5B0;
+    border-top: 4px solid #141821;
     border-radius: 3px;
-    padding: 8px 9px 8px;
+    padding: 7px 8px 7px;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    box-shadow: 0 1px 2px rgba(21, 25, 34, 0.05);
+    box-shadow: 0 2px 4px rgba(20, 24, 33, 0.06);
   }
   .lead-card.war { border-top-color: #B42318; }
   .lead-card.weather { border-top-color: #0E7490; }
@@ -109,7 +121,7 @@
 
   .lead-tag {
     font-size: 9px;
-    font-weight: 800;
+    font-weight: 900;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     display: flex;
@@ -121,44 +133,60 @@
   .lead-card.markets .lead-tag { color: #C2410C; }
   .lead-card.climate .lead-tag { color: #15803D; }
   .lead-src {
-    font-size: 8.5px;
+    font-size: 8.4px;
     font-weight: 700;
-    color: #6B7280;
+    color: #5C6473;
     letter-spacing: 0.03em;
   }
 
   .lead-art {
+    position: relative;
     width: 100%;
-    height: 102px;
+    height: 138px;
     border-radius: 2px;
     overflow: hidden;
-    border: 1px solid rgba(21, 25, 34, 0.14);
+    border: 1px solid #262C38;
     background: #141923;
   }
-  .lead-art svg {
+  .lead-art img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     display: block;
+  }
+  .art-chip {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    background: rgba(15, 19, 28, 0.86);
+    color: #FEF3C7;
+    font-size: 8.6px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 2px;
+    border: 1px solid rgba(254, 243, 199, 0.28);
   }
   .lead-hed {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 14px;
-    font-weight: 800;
-    line-height: 1.15;
-    color: #11151E;
+    font-size: 14.3px;
+    font-weight: 900;
+    line-height: 1.14;
+    color: #0F131C;
   }
   .lead-body {
-    font-size: 10.3px;
-    line-height: 1.28;
-    color: #262C38;
+    font-size: 10.2px;
+    line-height: 1.26;
+    color: #232936;
   }
   .lead-stat {
     margin-top: auto;
     padding-top: 4px;
-    border-top: 1px dashed #D8D0C0;
-    font-size: 9.8px;
+    border-top: 1px dashed #D1C7B3;
+    font-size: 9.6px;
     font-weight: 800;
-    color: #151922;
+    color: #141821;
     letter-spacing: 0.01em;
   }
 
@@ -168,32 +196,33 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
+    gap: 9px;
     min-height: 0;
   }
   .region-box {
-    background: #FFFDF8;
-    border: 1px solid #D5CCB9;
+    background: #FFFDF7;
+    border: 1px solid #CFC5B0;
     border-radius: 3px;
-    padding: 7px 10px 7px;
+    padding: 6px 9px 6px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 4px;
     overflow: hidden;
+    box-shadow: 0 1px 2px rgba(20, 24, 33, 0.04);
   }
   .region-hdr {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 4px;
-    border-bottom: 1.5px solid #151922;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #141821;
   }
   .region-name {
-    font-size: 10.5px;
+    font-size: 10.6px;
     font-weight: 900;
     letter-spacing: 0.11em;
     text-transform: uppercase;
-    color: #151922;
+    color: #141821;
     display: flex;
     align-items: center;
     gap: 6px;
@@ -211,9 +240,9 @@
   .dot-af { background: #15803D; }
   .dot-sc { background: #6D28D9; }
   .region-cnt {
-    font-size: 8.5px;
-    font-weight: 700;
-    color: #6B7280;
+    font-size: 8.3px;
+    font-weight: 800;
+    color: #5C6473;
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
@@ -221,69 +250,69 @@
   .briefs {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 4px;
     flex: 1;
     justify-content: space-between;
   }
   .brief {
     padding: 3px 0 4px 7px;
-    border-left: 2.5px solid #D5C8B4;
-    border-bottom: 1px solid #EDE6D8;
-    font-size: 10.4px;
+    border-left: 2.5px solid #C8B89E;
+    border-bottom: 1px solid #EAE2D1;
+    font-size: 10.6px;
     line-height: 1.27;
-    color: #222834;
+    color: #1B212C;
   }
   .brief:last-child {
     border-bottom: none;
-    padding-bottom: 1px;
+    padding-bottom: 0;
   }
   .brief strong {
-    color: #0E131D;
+    color: #0D111A;
     font-weight: 800;
   }
   .brief .loc {
     display: inline-block;
-    font-size: 8.3px;
-    font-weight: 800;
+    font-size: 8px;
+    font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: #7C2D12;
-    background: #F4E9D8;
+    background: #F2E5CF;
     padding: 0.5px 4px;
     border-radius: 2px;
     margin-right: 4px;
     vertical-align: 0.5px;
   }
   .brief .src {
-    color: #646D7C;
-    font-size: 9px;
+    color: #5E6675;
+    font-size: 8.8px;
     font-style: italic;
   }
 
   /* FOOTER */
   .footer {
-    border-top: 1.5px solid #151922;
-    padding-top: 5px;
+    border-top: 2px solid #141821;
+    padding-top: 4px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 9.2px;
-    font-weight: 700;
-    color: #4A5160;
+    font-size: 9px;
+    font-weight: 800;
+    color: #3E4554;
     letter-spacing: 0.04em;
   }
-  .footer strong { color: #151922; }
+  .footer strong { color: #0F131C; }
 </style>
 </head>
 <body>
 <div class="page">
   <header class="masthead">
     <div class="mast-left">
-      <div class="kicker-top">Daily Global Edition &middot; Verified Single-Day Wire Digest</div>
-      <h1 class="mast-title">THE WORLD ON FRIDAY, 20 NOVEMBER 2026</h1>
+      <div class="kicker-top">Illustrated Global Broadsheet &middot; Single-Day Verified Wire Edition</div>
+      <h1 class="mast-title">THE WORLD &middot; 20 NOVEMBER 2026</h1>
     </div>
     <div class="mast-right">
-      <div class="date-badge">20 NOV 2026</div>
+      <div class="date-badge">FRI &middot; 20 NOV 2026</div>
       <div class="edition-meta">28 Stories &middot; 7 Regions &middot; Geopolitics, Markets, Climate &amp; Science</div>
     </div>
   </header>
@@ -293,124 +322,48 @@
     <article class="lead-card war">
       <div class="lead-tag"><span>Europe &middot; War</span><span class="lead-src">ISW / PBS</span></div>
       <div class="lead-art">
-        <svg viewBox="0 0 240 96" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#131826"/>
-              <stop offset="100%" stop-color="#3B1A24"/>
-            </linearGradient>
-          </defs>
-          <rect width="240" height="96" fill="url(#sky1)"/>
-          <!-- Dnipro river -->
-          <rect x="0" y="68" width="240" height="28" fill="#182B44"/>
-          <path d="M0 75 Q60 71 120 76 T240 74" stroke="#3B82F6" stroke-width="1" fill="none" opacity="0.45"/>
-          <!-- Bridge silhouette & damaged span -->
-          <rect x="10" y="57" width="175" height="5" fill="#0F172A"/>
-          <rect x="34" y="57" width="8" height="22" fill="#0F172A"/>
-          <rect x="92" y="57" width="8" height="22" fill="#0F172A"/>
-          <rect x="148" y="57" width="8" height="22" fill="#0F172A"/>
-          <path d="M38 57 Q65 30 96 57" stroke="#64748B" stroke-width="2.5" fill="none"/>
-          <path d="M96 57 Q122 30 152 57" stroke="#64748B" stroke-width="2.5" fill="none"/>
-          <!-- Impact flare -->
-          <circle cx="122" cy="54" r="14" fill="#F97316" opacity="0.28"/>
-          <circle cx="122" cy="54" r="6" fill="#FDE047"/>
-          <!-- Missile arcs -->
-          <path d="M225 14 Q175 22 124 52" stroke="#EF4444" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
-          <path d="M210 24 Q138 14 54 32" stroke="#FB7185" stroke-width="1.6" stroke-dasharray="3 3" fill="none"/>
-          <circle cx="54" cy="32" r="3.5" fill="#FB7185"/>
-          <text x="8" y="14" fill="#FCA5A5" font-size="8.5" font-weight="800" font-family="sans-serif">SE POLAND BREACH</text>
-          <text x="128" y="88" fill="#FDE68A" font-size="8.5" font-weight="800" font-family="sans-serif">3 DNIPRO BRIDGES</text>
-        </svg>
+        <img src="file:///C:/Users/omarf/AppData/Roaming/OpenBot/provider-accounts/a53c0a78d6a64aa7b/antigravity-acp/brain/b1f68395-9fb1-4ed9-b6d5-2e3726c264ac/kyiv_bridges_nov20_1795233928556.jpg" alt="Kyiv Dnipro Bridges">
+        <span class="art-chip">3 Dnipro Bridges &middot; SE Poland</span>
       </div>
       <h2 class="lead-hed">Kyiv Bridges Struck in Mass Barrage; Missiles Hit Poland</h2>
       <p class="lead-body">Overnight Russian missiles and drones damaged 3 Dnipro bridges, St. Volodymyr&rsquo;s Cathedral, and Austrian &amp; Dutch embassies; 2 missiles and a drone landed in SE Poland.</p>
-      <div class="lead-stat">Tusk calls breach deliberate; UNSC emergency session sought</div>
+      <div class="lead-stat">Tusk calls breach deliberate; UNSC session sought</div>
     </article>
 
     <!-- LEAD 2: CYCLONE AKVAN -->
     <article class="lead-card weather">
       <div class="lead-tag"><span>South Asia &middot; Storm</span><span class="lead-src">IMD / The Hindu</span></div>
       <div class="lead-art">
-        <svg viewBox="0 0 240 96" xmlns="http://www.w3.org/2000/svg">
-          <rect width="240" height="96" fill="#0B2235"/>
-          <!-- India East Coast silhouette -->
-          <path d="M0 0 L125 0 L108 26 L94 48 L82 72 L70 96 L0 96 Z" fill="#1F3A36" stroke="#34D399" stroke-width="1.2"/>
-          <!-- Cyclone spiral -->
-          <g transform="translate(115,48)">
-            <circle r="34" fill="none" stroke="#38BDF8" stroke-width="1.5" opacity="0.35"/>
-            <circle r="24" fill="none" stroke="#7DD3FC" stroke-width="2" stroke-dasharray="14 6"/>
-            <circle r="14" fill="none" stroke="#BAE6FD" stroke-width="2.2" stroke-dasharray="10 4"/>
-            <circle r="5" fill="#F0F9FF"/>
-            <path d="M-6,-28 C12,-34 32,-16 28,6" fill="none" stroke="#38BDF8" stroke-width="2.5"/>
-            <path d="M6,28 C-12,34 -32,16 -28,-6" fill="none" stroke="#38BDF8" stroke-width="2.5"/>
-          </g>
-          <!-- Track arrow -->
-          <path d="M196 76 Q155 64 115 48 L84 36" stroke="#FBBF24" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
-          <circle cx="98" cy="42" r="3.5" fill="#FBBF24"/>
-          <text x="10" y="20" fill="#A7F3D0" font-size="8.5" font-weight="800" font-family="sans-serif">ODISHA</text>
-          <text x="10" y="72" fill="#A7F3D0" font-size="8.5" font-weight="800" font-family="sans-serif">ANDHRA</text>
-          <text x="148" y="20" fill="#BAE6FD" font-size="8.5" font-weight="800" font-family="sans-serif">BAY OF BENGAL</text>
-          <text x="136" y="88" fill="#FDE68A" font-size="8.5" font-weight="800" font-family="sans-serif">AKVAN LANDFALL</text>
-        </svg>
+        <img src="file:///C:/Users/omarf/AppData/Roaming/OpenBot/provider-accounts/a53c0a78d6a64aa7b/antigravity-acp/brain/b1f68395-9fb1-4ed9-b6d5-2e3726c264ac/cyclone_akvan_nov20_1795233937495.jpg" alt="Cyclone Akvan Landfall">
+        <span class="art-chip">Odisha &ndash; Andhra Coast</span>
       </div>
-      <h2 class="lead-hed">Cyclone Akvan Makes Landfall Near Gopalpur, India</h2>
+      <h2 class="lead-hed">Cyclone Akvan Slams India&rsquo;s Odisha&ndash;Andhra Coast</h2>
       <p class="lead-body">Severe Cyclonic Storm Akvan crossed the Odisha&ndash;Andhra Pradesh coast with heavy rains and mass evacuations of hundreds of thousands before weakening inland.</p>
-      <div class="lead-stat">0 major casualties reported after mass coastal evacuations</div>
+      <div class="lead-stat">0 major casualties after mass coastal evacuations</div>
     </article>
 
     <!-- LEAD 3: AI & CHIP ROUT -->
     <article class="lead-card markets">
       <div class="lead-tag"><span>Global Markets &middot; AI</span><span class="lead-src">Guardian / AJ</span></div>
       <div class="lead-art">
-        <svg viewBox="0 0 240 96" xmlns="http://www.w3.org/2000/svg">
-          <rect width="240" height="96" fill="#18141E"/>
-          <!-- Baseline -->
-          <line x1="12" y1="22" x2="228" y2="22" stroke="#475569" stroke-width="1"/>
-          <!-- 4 Red Plunge Bars -->
-          <rect x="20" y="22" width="38" height="54" rx="2" fill="#EF4444"/>
-          <rect x="74" y="22" width="38" height="45" rx="2" fill="#DC2626"/>
-          <rect x="128" y="22" width="38" height="44" rx="2" fill="#B91C1C"/>
-          <rect x="182" y="22" width="38" height="43" rx="2" fill="#F97316"/>
-          <!-- Values -->
-          <text x="39" y="16" text-anchor="middle" fill="#FCA5A5" font-size="9.5" font-weight="800" font-family="sans-serif">-6.2%</text>
-          <text x="93" y="16" text-anchor="middle" fill="#FCA5A5" font-size="9.5" font-weight="800" font-family="sans-serif">-5.2%</text>
-          <text x="147" y="16" text-anchor="middle" fill="#FCA5A5" font-size="9.5" font-weight="800" font-family="sans-serif">-5.1%</text>
-          <text x="201" y="16" text-anchor="middle" fill="#FDBA74" font-size="9.5" font-weight="800" font-family="sans-serif">-5.0%</text>
-          <!-- Labels -->
-          <text x="39" y="89" text-anchor="middle" fill="#E2E8F0" font-size="8.5" font-weight="800" font-family="sans-serif">TAIEX</text>
-          <text x="93" y="89" text-anchor="middle" fill="#E2E8F0" font-size="8.5" font-weight="800" font-family="sans-serif">KOSPI</text>
-          <text x="147" y="89" text-anchor="middle" fill="#E2E8F0" font-size="8.5" font-weight="800" font-family="sans-serif">NIKKEI</text>
-          <text x="201" y="89" text-anchor="middle" fill="#E2E8F0" font-size="8.5" font-weight="800" font-family="sans-serif">NASDAQ</text>
-        </svg>
+        <img src="file:///C:/Users/omarf/AppData/Roaming/OpenBot/provider-accounts/a53c0a78d6a64aa7b/antigravity-acp/brain/b1f68395-9fb1-4ed9-b6d5-2e3726c264ac/ai_chip_rout_nov20_1795233946893.jpg" alt="Global AI Chip Rout">
+        <span class="art-chip">TAIEX -6.2% &middot; KOSPI -5.2%</span>
       </div>
       <h2 class="lead-hed">Asia &amp; Wall Street Chip Rout Erases Nasdaq 2026 Gains</h2>
-      <p class="lead-body">Following Anthropic&rsquo;s $80B Nasdaq debut, AI spending fears and a reported SEC probe into Nvidia triggered sharp sell-offs across Tokyo, Seoul, Taipei, and New York.</p>
-      <div class="lead-stat">SoftBank -15%; Kospi curbs hit; TSMC -5%; Nvidia slumps</div>
+      <p class="lead-body">After Anthropic&rsquo;s $80B Nasdaq debut, AI spending fears and a reported SEC probe into Nvidia triggered sharp sell-offs across Tokyo, Seoul, Taipei, and New York.</p>
+      <div class="lead-stat">SoftBank -15%; Kospi curbs; TSMC -5%; Nikkei -5.1%</div>
     </article>
 
     <!-- LEAD 4: COP31 OVERTIME -->
     <article class="lead-card climate">
       <div class="lead-tag"><span>Climate &middot; UN</span><span class="lead-src">UNFCCC / AJ</span></div>
       <div class="lead-art">
-        <svg viewBox="0 0 240 96" xmlns="http://www.w3.org/2000/svg">
-          <rect width="240" height="96" fill="#0F241C"/>
-          <!-- Split Globe -->
-          <circle cx="72" cy="48" r="30" fill="#134E4A" stroke="#5EEAD4" stroke-width="1.8"/>
-          <ellipse cx="72" cy="48" rx="14" ry="30" fill="none" stroke="#5EEAD4" stroke-width="1.1" opacity="0.6"/>
-          <line x1="42" y1="48" x2="102" y2="48" stroke="#5EEAD4" stroke-width="1.1" opacity="0.6"/>
-          <line x1="72" y1="15" x2="72" y2="81" stroke="#F87171" stroke-width="2.2" stroke-dasharray="4 3"/>
-          <!-- Overtime clock -->
-          <circle cx="172" cy="46" r="24" fill="#1E293B" stroke="#FBBF24" stroke-width="2.5"/>
-          <line x1="172" y1="46" x2="172" y2="30" stroke="#F8FAFC" stroke-width="2.4" stroke-linecap="round"/>
-          <line x1="172" y1="46" x2="186" y2="52" stroke="#F87171" stroke-width="2.2" stroke-linecap="round"/>
-          <circle cx="172" cy="46" r="2.5" fill="#FBBF24"/>
-          <text x="172" y="85" text-anchor="middle" fill="#FDE68A" font-size="8.5" font-weight="800" font-family="sans-serif">OVERTIME &middot; ANTALYA</text>
-          <text x="72" y="88" text-anchor="middle" fill="#A7F3D0" font-size="8" font-weight="800" font-family="sans-serif">~200 NATIONS</text>
-        </svg>
+        <img src="file:///C:/Users/omarf/AppData/Roaming/OpenBot/provider-accounts/a53c0a78d6a64aa7b/antigravity-acp/brain/b1f68395-9fb1-4ed9-b6d5-2e3726c264ac/cop31_overtime_nov20_1795233978974.jpg" alt="COP31 Antalya Overtime">
+        <span class="art-chip">Antalya &middot; ~200 Nations</span>
       </div>
       <h2 class="lead-hed">COP31 Climate Talks Stall Into Overtime in Antalya</h2>
       <p class="lead-body">Scheduled closing day ended in deadlock after a late draft omitted fossil-fuel phase-out language, sparking backlash from EU, African, LatAm, and Pacific states.</p>
-      <div class="lead-stat">Adaptation-finance tripling by 2035 &amp; IPCC timing unresolved</div>
+      <div class="lead-stat">2035 adaptation finance &amp; IPCC timing unresolved</div>
     </article>
   </section>
 
@@ -503,7 +456,7 @@
 
   <footer class="footer">
     <span><strong>FRIDAY, 20 NOVEMBER 2026</strong> &middot; ONE DAY IN WORLD NEWS</span>
-    <span>ALL 28 ITEMS DATED TO 20 NOV 2026 &middot; ATTRIBUTED TO PUBLIC WIRE &amp; AGENCY REPORTS</span>
+    <span>28 STORIES DATED TO 20 NOV 2026 &middot; ORIGINAL EDITORIAL ARTWORK &amp; PUBLIC WIRE SOURCES</span>
   </footer>
 </div>
 </body>
